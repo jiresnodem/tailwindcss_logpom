@@ -1,0 +1,49 @@
+/** @format */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.ripple {
+		width: 200px;
+		height: 200px;
+		position: relative;
+	}
+
+	.ripple div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		animation: ripple 1s cubic-bezier(0.03, 0.54, 0.6, 0.63) infinite;
+		border: 6px solid blue;
+		border-radius: 50%;
+	}
+
+	.ripple div:nth-child(2) {
+		animation-delay: 0.5s;
+	}
+
+	@keyframes ripple {
+		0% {
+			width: 0;
+			height: 0;
+			opacity: 0;
+		}
+		5% {
+			width: 0;
+			height: 0;
+			opacity: 0;
+		}
+		5.1% {
+			width: 0;
+			height: 0;
+			opacity: 1;
+		}
+		100% {
+			width: 88px;
+			height: 88px;
+			opacity: 0;
+		}
+	}
+}
